@@ -1,12 +1,24 @@
 spring:
   profiles:
-    active: native
+    # add active native if you want to use local profile otherwise git for git cloud
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/config"
+        # native:
+          #search-locations: "classpath:/config"
+          #search-locations: "file:///C:\\Users\\mynam\\OneDrive\\Documents\\config_BankingMS"
+          git:
+            uri: "https://github.com/Yashsharma365/bankingMS-config.git"
+            default-label: main
+            timeout: 5
+            clone-on-start: true
+            force-pull: true
   application:
     name: "configserver"
+
+encrypt:
+  key: "gY7dJ9kL2mQ8hZ4sP3vR6tX5bL1uF2yW"
+
 server:
   port: 8071

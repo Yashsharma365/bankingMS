@@ -22,3 +22,17 @@ encrypt:
 
 server:
   port: 8071
+
+
+rabbitmq:
+  host: "localhost"
+  port: 15672
+  username: "guest"
+  password: "guest"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        #Enable all endpoints in actuator
+        include: "*"

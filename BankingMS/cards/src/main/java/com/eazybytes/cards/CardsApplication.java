@@ -38,7 +38,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 		)
 )
 public class CardsApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(CardsApplication.class, args);
 	}

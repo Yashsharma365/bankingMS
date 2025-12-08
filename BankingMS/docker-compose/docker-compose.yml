@@ -36,7 +36,7 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    image: "knightind/configserver:v3"
+    image: "knightind/configserver:v4"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -44,8 +44,25 @@ services:
       file: common-config.yaml
       service: microservice-base-config
 
+  eurekaserver:
+    healthcheck:
+      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    image: "knightind/eurekaserver:v4"
+    container_name: eureka-ms
+    ports:
+      - "8070:8070"
+    extends:
+      file: common-config.yaml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+
   accounts:
-    image: "knightind/accounts:v3"
+    image: "knightind/accounts:v4"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -57,10 +74,10 @@ services:
       SPRING_APPLICATION_NAME: "accounts"
     extends:
       file: common-config.yaml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
   loans:
-    image: "knightind/loans:v3"
+    image: "knightind/loans:v4"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -72,10 +89,24 @@ services:
       SPRING_APPLICATION_NAME: "loans"
     extends:
       file: common-config.yaml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
+  loans1:
+    image: "knightind/loans:v4"
+    container_name: loans-ms1
+    ports:
+      - "8091:8090"
+    depends_on:
+      loansdb:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
+      SPRING_APPLICATION_NAME: "loans"
+    extends:
+      file: common-config.yaml
+      service: microservice-eureka-config
   cards:
-    image: "knightind/cards:v3"
+    image: "knightind/cards:v4"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -87,7 +118,7 @@ services:
       SPRING_APPLICATION_NAME: "cards"
     extends:
       file: common-config.yaml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
 networks:
   knightind:

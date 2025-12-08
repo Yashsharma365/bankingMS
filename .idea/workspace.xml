@@ -5,88 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2888d213-f772-4ab2-a8b7-800ab2bceaa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/AccountsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/AuditAwareImpl/AuditAwareImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/Constants/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/DTO/AccountsDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/DTO/CustomerDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/DTO/ErrorResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/DTO/ResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/controller/AccountsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/entity/Accounts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/entity/BaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/entity/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/exception/CustomerAlreadyExistsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/mapper/AccountsMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/mapper/CustomerMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/repo/AccountsRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/repo/CustomerRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/service/IAccountsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/java/com/eazybytes/accounts/service/Impl/AccountsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/accounts/src/test/java/com/eazybytes/accounts/AccountsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/CardsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/audit/AuditAwareImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/constants/CardsConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/controller/CardsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/dto/CardsDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/dto/ErrorResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/dto/ResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/entity/BaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/entity/Cards.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/exception/CardAlreadyExistsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/mapper/CardsMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/repository/CardsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/service/ICardsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/java/com/eazybytes/cards/service/impl/CardsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/cards/src/test/java/com/eazybytes/cards/CardsApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/LoansApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/audit/AuditAwareImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/constants/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/controller/LoansController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/dto/ErrorResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/dto/LoansDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/dto/ResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/entity/BaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/entity/Loans.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/exception/AlreadyExistsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/exception/ResourceNotAvailableException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/mapper/LoanMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/repository/LoanRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/service/ILoansService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/java/com/eazybytes/loans/service/Impl/LoansService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/section2/loans/src/test/java/com/eazybytes/loans/LoansApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/BankingMS/docker-compose/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +34,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yashsharma365&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yashsharma365/bankingMS.git&quot;,
+    &quot;accountId&quot;: &quot;4b8741f3-6d09-4621-a653-c0d751fc3be9&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -125,30 +57,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Microservice full/BankingMS"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mynam/IdeaProjects/bankingMS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.ignored.files&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Microservice full\section2\accounts\src\main\java\com\eazybytes\accounts\DTO" />
       <recent name="C:\Microservice full\section2\accounts\src\main\resources" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

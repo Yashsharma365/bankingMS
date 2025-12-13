@@ -10,13 +10,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(
         name = "REST APIs for Customers in EazyBank",
@@ -28,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
     private ICustomersService customersService;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public CustomerController(ICustomersService customersService) {
         this.customersService = customersService;
@@ -52,10 +52,12 @@ public class CustomerController {
     }
     )
     @GetMapping("/fetchCustomerDetails")
-    public ResponseEntity<CustomerDetailsDto> fetchCustomerDetails(@RequestParam
-                                                                   @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+    public ResponseEntity<CustomerDetailsDto> fetchCustomerDetails(@RequestHeader("eazybank-correlation-id")
+                                                                       String correlationId,
+                                                                   @RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                    String mobileNumber) {
-        CustomerDetailsDto customerDetailsDto = customersService.fetchCustomerDetails(mobileNumber);
+        logger.info("eazybank-correlation-id found: {}", correlationId);
+        CustomerDetailsDto customerDetailsDto = customersService.fetchCustomerDetails(mobileNumber,correlationId);
         return ResponseEntity.ok().body(customerDetailsDto);
     }
 }

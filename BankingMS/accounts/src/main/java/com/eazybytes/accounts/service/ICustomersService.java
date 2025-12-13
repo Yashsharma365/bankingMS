@@ -5,5 +5,5 @@ import org.apache.commons.lang3.ClassUtils;
 
 public interface ICustomersService {
 
-    CustomerDetailsDto fetchCustomerDetails(String mobileNumber);
+    CustomerDetailsDto fetchCustomerDetails(String mobileNumber, String correlationId);
 }

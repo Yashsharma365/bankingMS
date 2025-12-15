@@ -4,36 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2888d213-f772-4ab2-a8b7-800ab2bceaa4" name="Changes" comment="Eureka and feign changes">
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/FilterUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/RequestTraceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/test/java/com/eazybytes/gatewayserver/GatewayserverApplicationTests.java" afterDir="false" />
+    <list default="true" id="2888d213-f772-4ab2-a8b7-800ab2bceaa4" name="Changes" comment="Gateway added">
+      <change afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/CardsFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/LoansFallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/controller/FallbackController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/controller/AccountsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/CardsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/CardsFeignClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/LoansFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Client/LoansFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/ICustomersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/ICustomersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Impl/CustomersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/java/com/eazybytes/accounts/service/Impl/CustomersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingMS/cards/src/main/java/com/eazybytes/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/cards/src/main/java/com/eazybytes/cards/controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingMS/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/cards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/configserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/docker-compose/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/docker-compose/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/eurekaserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankingMS/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/ResponseTraceFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/gatewayserver/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/loans/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankingMS/loans/src/main/java/com/eazybytes/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/loans/src/main/java/com/eazybytes/loans/controller/LoansController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankingMS/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/BankingMS/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,24 +75,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mynam/IdeaProjects/bankingMS/BankingMS",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mynam/IdeaProjects/bankingMS/BankingMS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.ignored.files&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mynam\IdeaProjects\bankingMS\BankingMS" />
@@ -142,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765209014771</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Gateway added">
+      <option name="closed" value="true" />
+      <created>1765648188280</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765648188280</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +159,7 @@
     <MESSAGE value="Docker changes" />
     <MESSAGE value="Checks" />
     <MESSAGE value="Eureka and feign changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eureka and feign changes" />
+    <MESSAGE value="Gateway added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gateway added" />
   </component>
 </project>

@@ -6,6 +6,8 @@ import com.eazybytes.accounts.DTO.CustomerDto;
 import com.eazybytes.accounts.DTO.ErrorResponseDto;
 import com.eazybytes.accounts.DTO.ResponseDto;
 import com.eazybytes.accounts.service.IAccountsService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -14,6 +16,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -31,7 +35,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @Validated
 public class AccountsController {
-    private IAccountsService iAccountsService;
+    private final IAccountsService iAccountsService;
+
+    private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
+
     public AccountsController(IAccountsService iAccountsService) {
         this.iAccountsService = iAccountsService;
     }
@@ -188,13 +195,20 @@ public class AccountsController {
             )
     }
     )
+    @Retry(name="build-info", fallbackMethod = "getBuildInfoFallback")
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildInfo() {
+        logger.debug("Build version invoked " );
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(buildVersion);
     }
-
+    public ResponseEntity<String> getBuildInfoFallback(Throwable t) {
+        logger.debug("Fallback Build version invoked" );
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("0.9");
+    }
     @Operation(
             summary = "Get Java version",
             description = "Get Java versions details that is installed into accounts microservice"
@@ -213,11 +227,18 @@ public class AccountsController {
             )
     }
     )
+    @RateLimiter(name="java-version", fallbackMethod = "getJavaVersionFallback")
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
+    }
+
+    public ResponseEntity<String> getJavaVersionFallback(Throwable t) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Rate limiter reached,sending default - Java 17");
     }
 
     @Operation(

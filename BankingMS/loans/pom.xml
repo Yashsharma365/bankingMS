@@ -119,7 +119,7 @@
 				<version>3.4.5</version>
 				<configuration>
 					<to>
-						<image>knightind/${project.artifactId}:v5</image>
+						<image>knightind/${project.artifactId}:v6</image>
 					</to>
 				</configuration>
 			</plugin>

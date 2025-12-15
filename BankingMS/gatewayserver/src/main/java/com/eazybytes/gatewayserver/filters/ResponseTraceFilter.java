@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import reactor.core.publisher.Mono;
 
+import static com.eazybytes.gatewayserver.filters.FilterUtility.CORRELATION_ID;
+
 @Configuration
 public class ResponseTraceFilter {
 
@@ -23,8 +25,10 @@ public class ResponseTraceFilter {
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
                 HttpHeaders requestHeaders = exchange.getRequest().getHeaders();
                 String correlationId = filterUtility.getCorrelationId(requestHeaders);
-                logger.debug("Updated the correlation id to the outbound headers: {}", correlationId);
-                exchange.getResponse().getHeaders().add(FilterUtility.CORRELATION_ID, correlationId);
+                if(!(exchange.getResponse().getHeaders().containsHeader(CORRELATION_ID))) {
+                    logger.debug("Updated the correlation id to the outbound headers: {}", correlationId);
+                    exchange.getResponse().getHeaders().add(CORRELATION_ID, correlationId);
+                }
             }));
         };
     }

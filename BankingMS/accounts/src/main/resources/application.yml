@@ -1,5 +1,6 @@
 server:
     port: 8080
+
 spring:
   application:
     name: "accounts"
@@ -16,6 +17,10 @@ spring:
       mode: always
   config:
     import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -60,7 +65,31 @@ info:
     version: "1.0.0"
 
 
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold : 50
+      waitDurationInOpenState: 10000
+
+resilience4j.retry:
+  configs:
+    default:
+      maxAttempts: 3
+      waitDuration: 500
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      ignoreExceptions:
+        - java.lang.NullPointerException
+
+resilience4j.ratelimiter:
+  configs:
+    default:
+      limitForPeriod: 10
+      limitRefreshPeriod: 2000
+      timeoutDuration: 0
 
 logging:
   level:
-    org.eazybytes.accounts: DEBUG
+    com.eazybytes.accounts: DEBUG

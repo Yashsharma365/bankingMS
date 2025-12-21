@@ -9,7 +9,7 @@ spring:
         webflux:
           httpclient:
             connect-timeout: 1000
-            response-timeout: 2s
+            response-timeout: 10s
           discovery:
             locator:
               enabled: false
@@ -33,6 +33,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 info:
   app:
@@ -43,6 +46,8 @@ info:
 logging:
   level:
     com.eazybytes.gatewayserver: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 circuitbreaker:
   resilience4j:

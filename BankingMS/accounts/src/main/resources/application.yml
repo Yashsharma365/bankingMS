@@ -43,6 +43,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 endpoints:
   shutdown:
@@ -93,3 +96,5 @@ resilience4j.ratelimiter:
 logging:
   level:
     com.eazybytes.accounts: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

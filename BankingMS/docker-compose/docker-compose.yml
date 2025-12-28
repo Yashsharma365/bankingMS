@@ -1,4 +1,17 @@
 services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.7
+    container_name: keycloak
+    ports:
+      - "127.0.0.1:7080:8080"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: "admin"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: "admin"
+    command: "start-dev"
+    extends:
+      file: common-config.yaml
+      service: network-deploy-service
+
   read:
     image: grafana/loki:3.1.2
     command: "-config.file=/etc/loki/config.yaml -target=read"
@@ -263,7 +276,7 @@ services:
       timeout: 5s
       retries: 20
       start_period: 10s
-    image: "knightind/configserver:v7"
+    image: "knightind/configserver:v8"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -282,7 +295,7 @@ services:
       timeout: 5s
       retries: 20
       start_period: 10s
-    image: "knightind/eurekaserver:v7"
+    image: "knightind/eurekaserver:v8"
     container_name: eureka-ms
     extends:
       file: common-config.yaml
@@ -292,10 +305,8 @@ services:
       OTEL_SERVICE_NAME: eurekaserver
 
   accounts:
-    image: "knightind/accounts:v7"
+    image: "knightind/accounts:v8"
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -314,7 +325,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "knightind/loans:v7"
+    image: "knightind/loans:v8"
     container_name: loans-ms
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
@@ -322,8 +333,6 @@ services:
       timeout: 5s
       retries: 20
       start_period: 10s
-    ports:
-      - "8090:8090"
     depends_on:
       loansdb:
         condition: service_healthy
@@ -336,10 +345,8 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "knightind/cards:v7"
+    image: "knightind/cards:v8"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -358,7 +365,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "knightind/gatewayserver:v7"
+    image: "knightind/gatewayserver:v8"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -378,10 +385,10 @@ services:
       SPRING_DATA_REDIS_CONNECT-TIMEOUT: 2s
       SPRING_DATA_REDIS-TIMEOUT: 1s
       OTEL_SERVICE_NAME: gatewayserver
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
     extends:
       file: common-config.yaml
       service: microservice-eureka-config
-
 networks:
   knightind:
     driver: "bridge"

@@ -77,6 +77,10 @@
 			<artifactId>spring-boot-starter-actuator-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -102,7 +106,7 @@
                 <version>3.4.5</version>
                 <configuration>
                     <to>
-                        <image>knightind/${project.artifactId}:v7</image>
+                        <image>knightind/${project.artifactId}:v8</image>
                     </to>
                 </configuration>
             </plugin>

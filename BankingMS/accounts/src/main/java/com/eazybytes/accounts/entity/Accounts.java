@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import lombok.*;
 
 import jakarta.persistence.Id;
+
 @Entity
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Accounts extends BaseEntity {
@@ -20,4 +21,7 @@ public class Accounts extends BaseEntity {
 
     @Column(name="branch_address")
     private String branchAddress;
+
+    @Column(name="communication_sw")
+    private Boolean communicationSw;
 }

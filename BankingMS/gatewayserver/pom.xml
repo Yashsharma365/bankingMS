@@ -106,7 +106,7 @@
                 <version>3.4.5</version>
                 <configuration>
                     <to>
-                        <image>knightind/${project.artifactId}:v8</image>
+                        <image>knightind/${project.artifactId}:v9</image>
                     </to>
                 </configuration>
             </plugin>

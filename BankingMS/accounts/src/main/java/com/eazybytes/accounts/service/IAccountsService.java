@@ -8,4 +8,5 @@ public interface IAccountsService {
     CustomerDto fetchAccount(String mobileNumber);
     boolean updateAccount(CustomerDto customerDTO);
     boolean deleteAccount(String mobileNumber);
+    boolean updateCommunication(Long accountNumber);
 }

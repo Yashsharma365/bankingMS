@@ -1,0 +1,5 @@
+knightind-database-base:
+  database:
+    name: cardsdb
+  service:
+    port: 3308

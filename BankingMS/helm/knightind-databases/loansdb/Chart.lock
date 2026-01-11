@@ -1,0 +1,6 @@
+dependencies:
+- name: knightind-database-base
+  repository: file://../../knightind-database-base
+  version: 0.1.0
+digest: sha256:acad53d1aeadd7c4db5390dfe4d858d7b8029216f6b0fe8e3cebe8c3f6767ae7
+generated: "2026-01-10T17:28:34.6135834+05:30"

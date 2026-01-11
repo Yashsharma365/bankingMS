@@ -1,0 +1,39 @@
+dependencies:
+- name: knightind-common
+  repository: file://../../knightind-common
+  version: 0.1.0
+- name: knightind-database-base
+  repository: file://../../knightind-database-base
+  version: 0.1.0
+- name: configserver
+  repository: file://../../knightind-services/configserver
+  version: 0.1.0
+- name: accountsdb
+  repository: file://../../knightind-databases/accountsdb
+  version: 0.1.0
+- name: cardsdb
+  repository: file://../../knightind-databases/cardsdb
+  version: 0.1.0
+- name: loansdb
+  repository: file://../../knightind-databases/loansdb
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../knightind-services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../knightind-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../knightind-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../knightind-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../knightind-services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../knightind-services/message
+  version: 0.1.0
+digest: sha256:3aaf0be145a8db56e1328e75c0c01d28fe5388d8c3eb4a46a9c0fe8b97f8258f
+generated: "2026-01-10T19:58:27.3788639+05:30"

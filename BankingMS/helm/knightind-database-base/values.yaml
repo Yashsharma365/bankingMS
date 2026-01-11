@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: mysql
+  tag: "8.0"
+
+service:
+  port: 3306
+
+database:
+  name: appdb
+
+persistence:
+  size: 5Gi
+
+credentials:
+  rootPassword: changeme

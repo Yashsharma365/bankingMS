@@ -48,10 +48,6 @@ dependencies:
     version: 0.1.0
     repository: file://../../knightind-databases/loansdb
 
-  - name: eurekaserver
-    version: 0.1.0
-    repository: file://../../knightind-services/eurekaserver
-
   - name: accounts
     version: 0.1.0
     repository: file://../../knightind-services/accounts

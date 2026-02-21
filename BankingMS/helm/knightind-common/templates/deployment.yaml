@@ -43,12 +43,12 @@ spec:
                 key: SPRING_CONFIG_IMPORT
           {{- end }}
 
-          {{- if .Values.eureka_enabled }}
-          - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          {{- if .Values.discovery_enabled }}
+          - name: SPRING.CLOUD.KUBERNETES.DISCOVERY.DISCOVERY-SERVER-URL
             valueFrom:
               configMapKeyRef:
                 name: {{ .Values.global.configMapName }}
-                key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+                key: SPRING.CLOUD.KUBERNETES.DISCOVERY.DISCOVERY-SERVER-URL
           {{- end }}
 
           {{- if .Values.resourceserver_enabled }}

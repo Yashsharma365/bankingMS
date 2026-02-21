@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Initializing Pipeline for BankingMS..."
                 // Ensure Maven wrapper has execution permissions
-                sh 'chmod +x ./**/mvnw'
+                sh 'chmod +x BankingMS/**/mvnw'
             }
         }
 
@@ -22,9 +22,9 @@ pipeline {
         // ==========================================
         
         stage('Build Accounts') {
-            when { changeset "accounts/**" }
+            when { changeset "BankingMS/accounts/**" }
             steps {
-                dir('accounts') {
+                dir('BankingMS/accounts') {
                     echo "Building and Pushing Accounts Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -34,9 +34,9 @@ pipeline {
         }
 
         stage('Build Cards') {
-            when { changeset "cards/**" }
+            when { changeset "BankingMS/cards/**" }
             steps {
-                dir('cards') {
+                dir('BankingMS/cards') {
                     echo "Building and Pushing Cards Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -46,9 +46,9 @@ pipeline {
         }
 
         stage('Build Loans') {
-            when { changeset "loans/**" }
+            when { changeset "BankingMS/loans/**" }
             steps {
-                dir('loans') {
+                dir('BankingMS/loans') {
                     echo "Building and Pushing Loans Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -58,9 +58,9 @@ pipeline {
         }
 
         stage('Build Config Server') {
-            when { changeset "configserver/**" }
+            when { changeset "BankingMS/configserver/**" }
             steps {
-                dir('configserver') {
+                dir('BankingMS/configserver') {
                     echo "Building and Pushing Config Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -70,9 +70,9 @@ pipeline {
         }
 
         stage('Build Eureka Server') {
-            when { changeset "eurekaserver/**" }
+            when { changeset "BankingMS/eurekaserver/**" }
             steps {
-                dir('eurekaserver') {
+                dir('BankingMS/eurekaserver') {
                     echo "Building and Pushing Eureka Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -82,9 +82,9 @@ pipeline {
         }
 
         stage('Build Gateway Server') {
-            when { changeset "gatewayserver/**" }
+            when { changeset "BankingMS/gatewayserver/**" }
             steps {
-                dir('gatewayserver') {
+                dir('BankingMS/gatewayserver') {
                     echo "Building and Pushing Gateway Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
@@ -94,9 +94,9 @@ pipeline {
         }
 
         stage('Build Message Service') {
-            when { changeset "message/**" }
+            when { changeset "BankingMS/message/**" }
             steps {
-                dir('message') {
+                dir('BankingMS/message') {
                     echo "Building and Pushing Message Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
                         sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'

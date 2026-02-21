@@ -27,7 +27,7 @@ pipeline {
                 dir('BankingMS/accounts') {
                     echo "Building and Pushing Accounts Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
                 dir('BankingMS/cards') {
                     echo "Building and Pushing Cards Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -51,7 +51,7 @@ pipeline {
                 dir('BankingMS/loans') {
                     echo "Building and Pushing Loans Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -63,7 +63,7 @@ pipeline {
                 dir('BankingMS/configserver') {
                     echo "Building and Pushing Config Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -75,7 +75,7 @@ pipeline {
                 dir('BankingMS/eurekaserver') {
                     echo "Building and Pushing Eureka Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -87,7 +87,7 @@ pipeline {
                 dir('BankingMS/gatewayserver') {
                     echo "Building and Pushing Gateway Server..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
@@ -99,34 +99,13 @@ pipeline {
                 dir('BankingMS/message') {
                     echo "Building and Pushing Message Service..."
                     withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
-                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                        sh "./mvnw clean compile jib:build -Djib.to.auth.username=\${DOCKER_USER_ENV} -Djib.to.auth.password=\${DOCKER_PASS} -Dimage.tag=v\${env.BUILD_NUMBER.toInteger() + 12}"
                     }
                 }
             }
         }
 
-        // ==========================================
-        // DEPLOYMENT STAGE
-        // ==========================================
-        
-        stage('Deploy to Kubernetes') {
-            // In a real scenario, this would only deploy the services that actually changed,
-            // or trigger an ArgoCD sync. Here we run a generic helm upgrade.
-            steps {
-                echo 'Skipping auto-deploy to avoid disruption. Uncomment lines below to enable.'
-                /*
-                script {
-                    if (env.GIT_COMMIT) {
-                        sh "helm upgrade --install accounts ./helm/knightind-services/accounts --set image.tag=${env.GIT_COMMIT}"
-                        sh "helm upgrade --install cards ./helm/knightind-services/cards --set image.tag=${env.GIT_COMMIT}"
-                        // add other services...
-                    } else {
-                        echo "No GIT_COMMIT available, building locally without deployment."
-                    }
-                }
-                */
-            }
-        }
+
     }
 
     post {

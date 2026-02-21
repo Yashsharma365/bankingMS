@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(
+            name: 'MICROSERVICE',
+            choices: ['accounts', 'cards', 'loans', 'configserver', 'eurekaserver', 'gatewayserver', 'message'],
+            description: 'Select the microservice you want to deploy to Kubernetes'
+        )
+        string(
+            name: 'IMAGE_TAG',
+            defaultValue: 'v12',
+            description: 'Enter the specific Docker Image Tag you want to deploy (e.g., v12, v15, latest)'
+        )
+        // You could add environment choices here later (Dev, QA, Prod)
+    }
+
+    environment {
+        // We ensure helm is available and assume Jenkins has kubeconfig access configured
+        HELM_CHART_PATH = "BankingMS/helm/knightind-services/${params.MICROSERVICE}"
+        RELEASE_NAME = "${params.MICROSERVICE}"
+    }
+
+    stages {
+        stage('Initialize') {
+            steps {
+                echo "Initializing CD Pipeline for ${params.MICROSERVICE} with image tag ${params.IMAGE_TAG}..."
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    echo "Executing Helm Upgrade for ${params.MICROSERVICE}..."
+                    // The path assumes the Jenkins job checks out the GitHub repository same as the CI job
+                    // We dynamically pass the image tag parameter to override the value in values.yaml
+                    sh """
+                    helm upgrade --install ${RELEASE_NAME} ./${HELM_CHART_PATH} \
+                      --set image.tag=${params.IMAGE_TAG} \
+                      --wait --timeout 300s
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+            echo "CD Pipeline finished. Workspace cleaned."
+        }
+        success {
+            echo "SUCCESS: Successfully deployed ${params.MICROSERVICE} version ${params.IMAGE_TAG} to Kubernetes!"
+        }
+        failure {
+            echo "FAILURE: Deployment failed. Please check the logs."
+        }
+    }
+}

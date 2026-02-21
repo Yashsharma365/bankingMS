@@ -32,24 +32,28 @@ pipeline {
                 script {
                     echo "Starting Deployment for: ${params.MICROSERVICE}"
                     
-                    if (params.MICROSERVICE == 'all') {
-                        def services = env.ALL_SERVICES.split(" ")
-                        for (service in services) {
-                            echo "=========================================="
-                            echo "Deploying ${service}..."
+                    withCredentials([file(credentialsId: 'k8s-config', variable: 'KUBECONFIG')]) {
+                        if (params.MICROSERVICE == 'all') {
+                            def services = env.ALL_SERVICES.split(" ")
+                            for (service in services) {
+                                echo "=========================================="
+                                echo "Deploying ${service}..."
+                                sh """
+                                helm upgrade --install ${service} ./BankingMS/helm/knightind-services/${service} \
+                                  --set image.tag=${params.IMAGE_TAG} \
+                                  --kubeconfig \${KUBECONFIG} \
+                                  --wait --timeout 300s
+                                """
+                            }
+                        } else {
+                            // Deploy single selected service
                             sh """
-                            helm upgrade --install ${service} ./BankingMS/helm/knightind-services/${service} \
+                            helm upgrade --install ${params.MICROSERVICE} ./BankingMS/helm/knightind-services/${params.MICROSERVICE} \
                               --set image.tag=${params.IMAGE_TAG} \
+                              --kubeconfig \${KUBECONFIG} \
                               --wait --timeout 300s
                             """
                         }
-                    } else {
-                        // Deploy single selected service
-                        sh """
-                        helm upgrade --install ${params.MICROSERVICE} ./BankingMS/helm/knightind-services/${params.MICROSERVICE} \
-                          --set image.tag=${params.IMAGE_TAG} \
-                          --wait --timeout 300s
-                        """
                     }
                 }
             }

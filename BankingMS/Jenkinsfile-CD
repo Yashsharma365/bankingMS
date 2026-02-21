@@ -40,6 +40,7 @@ pipeline {
                                 echo "Deploying ${service}..."
                                 sh """
                                 helm upgrade --install ${service} ./BankingMS/helm/knightind-services/${service} \
+                                  -f ./BankingMS/helm/environments/dev-env/values.yaml \
                                   --set image.tag=${params.IMAGE_TAG} \
                                   --kubeconfig \${KUBECONFIG} \
                                   --wait --timeout 300s
@@ -49,6 +50,7 @@ pipeline {
                             // Deploy single selected service
                             sh """
                             helm upgrade --install ${params.MICROSERVICE} ./BankingMS/helm/knightind-services/${params.MICROSERVICE} \
+                              -f ./BankingMS/helm/environments/dev-env/values.yaml \
                               --set image.tag=${params.IMAGE_TAG} \
                               --kubeconfig \${KUBECONFIG} \
                               --wait --timeout 300s

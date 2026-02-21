@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: loansdb
+spec:
+  serviceName: loansdb
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loansdb
+  template:
+    metadata:
+      labels:
+        app: loansdb
+    spec:
+      containers:
+        - name: loansdb
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: knightind-configmap
+                  key: LOANS_MYSQL_DATABASE
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: knightind-configmap
+                  key: MYSQL_ROOT_PASSWORD
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loansdb
+spec:
+  type: ClusterIP
+  selector:
+    app: loansdb
+  ports:
+    - protocol: TCP
+      port: 3307
+      targetPort: 3306

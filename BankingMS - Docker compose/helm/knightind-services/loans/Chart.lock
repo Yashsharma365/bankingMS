@@ -1,0 +1,6 @@
+dependencies:
+- name: knightind-common
+  repository: file://../../knightind-common
+  version: 0.1.0
+digest: sha256:17103b1e5cbe57899cc03e457a6493f75936599ebf63e7eef5ffb283c7528c61
+generated: "2026-01-10T16:54:03.5020336+05:30"

@@ -1,0 +1,144 @@
+pipeline {
+    agent any
+
+    environment {
+        // Defines the registry to push to (Docker Hub username)
+        DOCKER_USER = 'knightind'
+        // Define your Docker Hub credentials ID here. You must create this in Jenkins.
+        DOCKER_CREDS_ID = 'docker-hub-credentials'
+    }
+
+    stages {
+        stage('Initialize') {
+            steps {
+                echo "Initializing Pipeline for BankingMS..."
+                // Ensure Maven wrapper has execution permissions
+                sh 'chmod +x ./**/mvnw'
+            }
+        }
+
+        // ==========================================
+        // BUILD & PUSH STAGES
+        // ==========================================
+        
+        stage('Build Accounts') {
+            when { changeset "accounts/**" }
+            steps {
+                dir('accounts') {
+                    echo "Building and Pushing Accounts Service..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Cards') {
+            when { changeset "cards/**" }
+            steps {
+                dir('cards') {
+                    echo "Building and Pushing Cards Service..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Loans') {
+            when { changeset "loans/**" }
+            steps {
+                dir('loans') {
+                    echo "Building and Pushing Loans Service..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Config Server') {
+            when { changeset "configserver/**" }
+            steps {
+                dir('configserver') {
+                    echo "Building and Pushing Config Server..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Eureka Server') {
+            when { changeset "eurekaserver/**" }
+            steps {
+                dir('eurekaserver') {
+                    echo "Building and Pushing Eureka Server..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Gateway Server') {
+            when { changeset "gatewayserver/**" }
+            steps {
+                dir('gatewayserver') {
+                    echo "Building and Pushing Gateway Server..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        stage('Build Message Service') {
+            when { changeset "message/**" }
+            steps {
+                dir('message') {
+                    echo "Building and Pushing Message Service..."
+                    withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDS_ID, passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER_ENV')]) {
+                        sh './mvnw clean compile jib:build -Djib.to.auth.username=${DOCKER_USER_ENV} -Djib.to.auth.password=${DOCKER_PASS}'
+                    }
+                }
+            }
+        }
+
+        // ==========================================
+        // DEPLOYMENT STAGE
+        // ==========================================
+        
+        stage('Deploy to Kubernetes') {
+            // In a real scenario, this would only deploy the services that actually changed,
+            // or trigger an ArgoCD sync. Here we run a generic helm upgrade.
+            steps {
+                echo 'Skipping auto-deploy to avoid disruption. Uncomment lines below to enable.'
+                /*
+                script {
+                    if (env.GIT_COMMIT) {
+                        sh "helm upgrade --install accounts ./helm/knightind-services/accounts --set image.tag=${env.GIT_COMMIT}"
+                        sh "helm upgrade --install cards ./helm/knightind-services/cards --set image.tag=${env.GIT_COMMIT}"
+                        // add other services...
+                    } else {
+                        echo "No GIT_COMMIT available, building locally without deployment."
+                    }
+                }
+                */
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+            echo 'Pipeline finished. Workspace cleaned.'
+        }
+        success {
+            echo 'SUCCESS: BankingMS Build completed successfully.'
+        }
+        failure {
+            echo 'FAILURE: BankingMS Build failed. Please check the logs.'
+        }
+    }
+}

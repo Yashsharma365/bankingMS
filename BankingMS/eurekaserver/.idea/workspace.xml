@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3fda633-77cc-4225-9a00-9e22692b0a1f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../kubernetes/kubernetes-discoveryserver.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/AccountsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/service/Client/CardsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/service/Client/CardsFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/service/Client/LoansFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/src/main/java/com/eazybytes/accounts/service/Client/LoansFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cards/src/main/java/com/eazybytes/cards/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cards/src/main/java/com/eazybytes/cards/CardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/.heal/mrf/list.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/config/config.json/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/config/iam/format.json/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/format.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/pool.bin/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/.minio.sys/tmp/ff2bf283-75d5-404a-9554-566de66e6f07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/index/index_20443/tenant1/1766319649548818015-compactor-1766305839569-1766316647337-330cb4ae.tsdb.gz/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/loki_cluster_seed.json/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/10085657813c1e16/19b40083b5919b4008cdbbc35e2e93/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/15b85d0a5af11d96/19b4008553f19b4076978621025958/6396cfbe-a6e4-4b5f-9de5-41136ff4eb7e/part.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/15b85d0a5af11d96/19b4008553f19b4076978621025958/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/29f56cb6ab4dc43e/19b40083ad919b4008c9df9e2f3c2d/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/2c0a1e083ff432df/19b400984ff19b407b740c87a9edec/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/3014c9b4245ec1f7/19b40085aaf19b4019fa39ac7865d8/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/324a466ca8bdf07e/19b40083aaa19b401bbe18ede4ed8b/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/485009ba0b41be12/19b40083e5f19b40083ede793f29f2/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/485009ba0b41be12/19b40ad239219b40ad23a9e0da8ab0/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/61add763259723de/19b400984ff19b407b6b908e9c2d3/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/685c61aa41353697/19b400845a819b407ab502d380f710/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/907fe40de505230c/19b40084c1d19b40763f7af4f3e3fc/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/911bdb32f103c359/19b40083adb19b4008cebef61f7c09/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/a1687c31ec456893/19b400839d119b40083b1138e73819/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/a1687c31ec456893/19b403f2a1f19b403f2abaa75b4930/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/a1687c31ec456893/19b40761cb519b40761d297cdeaf4a/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/a33596adaeb04b9/19b4008459e19b4076305f39ad5665/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/a98968fcaa7a45ff/19b400a9d6e19b407bfdf8647157dc/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/ab1a52dab88fb368/19b400984ff19b407b6c52ad4f9a21/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/b68cf1cdcdf0c25e/19b400909e119b40771b44a86514b/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/cbd332011b9e80f8/19b4008466419b40084665d0a7b8ac/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/e4797616b4f5c24c/19b40083c7719b407691c791cb1453/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.data/minio/loki-data/tenant1/f3e1f697e232315b/19b4008474619b40767c8fb58184ac/xl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.idea/docker-compose.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/common-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/observability/alloy/alloy-local-config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/observability/grafana/datasource.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/observability/loki/loki-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/observability/prometheus/prometheus.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose/observability/tempo/tempo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eazybytes/eurekaserver/EurekaserverApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/eazybytes/eurekaserver/EurekaserverApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatewayserver/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../gatewayserver/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/Chart.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/Chart.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/accounts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/accounts-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/cards-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/cards-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/configserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/configserver-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/eurekaserver-0.1.0.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/gatewayserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/gatewayserver-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/loans-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/loans-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/charts/message-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/charts/message-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/environments/dev-env/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/environments/dev-env/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-common/templates/configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-common/templates/configmap.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-common/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-common/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/accounts/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/accounts/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/accounts/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/accounts/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/cards/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/cards/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/cards/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/cards/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/configserver/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/configserver/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/configserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/configserver/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/eurekaserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/eurekaserver/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/gatewayserver/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/gatewayserver/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/gatewayserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/gatewayserver/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/loans/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/loans/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/loans/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/loans/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/message/charts/knightind-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/message/charts/knightind-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../helm/knightind-services/message/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../helm/knightind-services/message/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loans/src/main/java/com/eazybytes/loans/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../loans/src/main/java/com/eazybytes/loans/LoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../message/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../message/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yashsharma365&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yashsharma365/bankingMS.git&quot;,
+    &quot;accountId&quot;: &quot;4b8741f3-6d09-4621-a653-c0d751fc3be9&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="36BuZShfe8xiKVWQNV3A9DlThZ0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eurekaserver [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazybytes.eurekaserver.EurekaserverApplication" />
+      <module name="eurekaserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazybytes.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EurekaserverApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3fda633-77cc-4225-9a00-9e22692b0a1f" name="Changes" comment="" />
+      <created>1764492340519</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764492340519</updated>
+    </task>
+    <servers />
+  </component>
+</project>

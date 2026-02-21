@@ -1,0 +1,5 @@
+knightind-database-base:
+  database:
+    name: loansdb
+  service:
+    port: 3307

@@ -4,8 +4,8 @@ pipeline {
     parameters {
         choice(
             name: 'MICROSERVICE',
-            choices: ['accounts', 'cards', 'loans', 'configserver', 'eurekaserver', 'gatewayserver', 'message'],
-            description: 'Select the microservice you want to deploy to Kubernetes'
+            choices: ['all', 'accounts', 'cards', 'loans', 'configserver', 'eurekaserver', 'gatewayserver', 'message'],
+            description: 'Select the microservice to deploy, or "all" to deploy them all together'
         )
         string(
             name: 'IMAGE_TAG',
@@ -16,9 +16,8 @@ pipeline {
     }
 
     environment {
-        // We ensure helm is available and assume Jenkins has kubeconfig access configured
-        HELM_CHART_PATH = "BankingMS/helm/knightind-services/${params.MICROSERVICE}"
-        RELEASE_NAME = "${params.MICROSERVICE}"
+        // Defines the list of backend services used when "all" is selected
+        ALL_SERVICES = "configserver eurekaserver accounts cards loans gatewayserver message"
     }
 
     stages {
@@ -31,14 +30,27 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    echo "Executing Helm Upgrade for ${params.MICROSERVICE}..."
-                    // The path assumes the Jenkins job checks out the GitHub repository same as the CI job
-                    // We dynamically pass the image tag parameter to override the value in values.yaml
-                    sh """
-                    helm upgrade --install ${RELEASE_NAME} ./${HELM_CHART_PATH} \
-                      --set image.tag=${params.IMAGE_TAG} \
-                      --wait --timeout 300s
-                    """
+                    echo "Starting Deployment for: ${params.MICROSERVICE}"
+                    
+                    if (params.MICROSERVICE == 'all') {
+                        def services = env.ALL_SERVICES.split(" ")
+                        for (service in services) {
+                            echo "=========================================="
+                            echo "Deploying ${service}..."
+                            sh """
+                            helm upgrade --install ${service} ./BankingMS/helm/knightind-services/${service} \
+                              --set image.tag=${params.IMAGE_TAG} \
+                              --wait --timeout 300s
+                            """
+                        }
+                    } else {
+                        // Deploy single selected service
+                        sh """
+                        helm upgrade --install ${params.MICROSERVICE} ./BankingMS/helm/knightind-services/${params.MICROSERVICE} \
+                          --set image.tag=${params.IMAGE_TAG} \
+                          --wait --timeout 300s
+                        """
+                    }
                 }
             }
         }
